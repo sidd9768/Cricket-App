@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row mb-3 text-center">
+    <h1 class="mb-4">Venues</h1>
+    <div class="col-2"></div>
+    <div class="col-8">
+        <% for(let venue of venues){ %>
+        <a href="/venues/<%=venue._id%> " style="color: inherit; text-decoration: none;">
+            <div class="card">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="<%=venue.image%>" class="img-fluid my-3 mx-5" style="width: 12rem; height: 12rem;"
+                            alt="">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h4 class="card-title mt-4 mb-2"><%=venue.name%> </h4>
+                            <p class="card-text"><%=venue.country%></p>
+                            <h6 class="mt-5 text-muted">Capacity - <%=venue.capacity%> people </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <% } %>
+    </div>
+    <div class="col-2"></div>
+</div>

@@ -1,0 +1,57 @@
+<% layout('layouts/boilerplate') %>
+
+
+<div class="container mb-3">
+    <h1 class="text-center">Matches</h1>
+    <% for(let match of matches){ %>
+    <div class="row text-center">
+        <div class="card my-3"></div>
+        <div class="col-2"></div>
+        <div class="col-3">
+            <h2><%=match.teamOne%> </h2>
+        </div>
+        <div class="col-2">
+            <h5>Vs</h5>
+        </div>
+        <div class="col-3">
+            <h2><%=match.teamTwo%> </h1>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row text-center">
+        <div class="col-2"></div>
+        <div class="col-3"></div>
+        <div class="col-2">
+            <h6 class="mt-2">
+                Match - <%=match.matchNumber%>
+            </h6>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row text-center">
+        <div class="col-2"></div>
+        <div class="col-3"></div>
+        <div class="col-2">
+            <a href="/venues/<%=match.venue._id%> " style="color: inherit; text-decoration: none;">
+                <h6 class="mt-2 text-muted">
+                    Venue - <%=match.venue.name%>
+                    <hr>
+                    <% if(match.finished){ %> 
+                        <div class="mb-2">
+                            <small>Ended - <span class="text-success"><%=match.matchSummary.teamWon%> Won</span></small> 
+                        </div>
+                        <a href="/matches/<%=match._id%>">
+                            See result
+                        </a>
+                    <% }else{ %>   
+                        <p>N/A</p>  
+                    <% } %> 
+                </h6>
+            </a>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-2"></div>
+    </div>
+    <% } %>
+</div>

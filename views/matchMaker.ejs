@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') %> 
+
+<h1>Match Maker</h1>
+
+<form action="/matchMaker" method="POST">
+    <div>
+        <label for="teamA">Team A: </label>
+        <input type="text" id="teamA" name="match[teamOne]">
+    </div>
+    <div>
+        <label for="teamB">Team B: </label>
+        <input type="text" id="teamB" name="match[teamTwo]">
+    </div>
+    <div>
+        <label for="matchNum">Match Number: </label>
+        <input type="number" id="matchNum" name="match[matchNumber]">
+    </div>
+    <div>
+        <label for="matchRes">Match status: </label>
+        <input type="text" id="matchRes" name="match[finished]" placeholder="true/false">
+    </div>
+    <button>submit</button>
+</form>

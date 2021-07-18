@@ -1,0 +1,26 @@
+<%layout('layouts/boilerplate')%>
+
+<div class="row mb-3 text-center">
+    <h1 class="mb-4">Teams</h1>
+    <div class="col-2"></div>
+    <div class="col-8">
+        <% for(let team of teams){ %>
+        <a href="/teams/<%=team._id%>" style="color: inherit; text-decoration: none;">
+            <div class="card">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="<%=team.image%>" class="img-fluid my-3 mx-5" style="width: 15rem; height: 15rem;" alt="">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body my-3">
+                            <h2 class="card-title mt-5"><%=team.name%> </h2>
+                            <h6 class="card-text my-4">Ranking : <%= team.rank %> </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <% } %>
+    </div>
+    <div class="col-2"></div>
+</div>
